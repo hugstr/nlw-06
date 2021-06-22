@@ -9,12 +9,15 @@ export function SignIn() {
   return (
     <View style={styles.container}>
       <StatusBar
-      barStyle="light-content"
-      backgroundColor="transparent"
-      translucent
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
       />
 
-      <Image source={IllustrationImg} style={styles.image} />
+      <Image source={IllustrationImg}
+        style={styles.image}
+        resizeMode="stretch"
+      />
 
       <View style={styles.content}>
         <Text style={styles.title}>
@@ -24,10 +27,12 @@ export function SignIn() {
         </Text>
 
         <Text style={styles.subtitle}>Crie grupos para jogar seus games {`\n`}
-        favoritos com seus amigos</Text>
+          favoritos com seus amigos</Text>
+
+        <ButtonIcon activeOpacity={0.7} title="Entrar com Discord" />
+
       </View>
 
-      <ButtonIcon activeOpacity={0.7} title="Entrar com Discord" />
 
     </View>
   );
