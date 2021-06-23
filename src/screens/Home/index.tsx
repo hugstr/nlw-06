@@ -5,6 +5,7 @@ import { CategorySelect } from "../../components/CategorySelect";
 import { Appointment } from "../../components/Appointment";
 import { ListDivider } from "../../components/ListDivider";
 import { ListHeader } from "../../components/ListHeader";
+import { Background } from "../../components/Background";
 import { ButtonAdd } from "../../components/ButtonAdd";
 import { Profile } from "../../components/Profile";
 
@@ -47,7 +48,7 @@ export function HomeScreen() {
   }
 
   return (
-    <View>
+    <Background>
       <View style={styles.header}>
         <Profile />
         <ButtonAdd />
@@ -71,6 +72,6 @@ export function HomeScreen() {
           />
         </View>
       </View>
-    </View>
+    </Background>
   );
 }
