@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 
 import { BorderlessButton } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Feather } from "@expo/vector-icons";
 import { Text, View } from "react-native";
@@ -16,12 +17,14 @@ type Props = {
 export function Header({ title, action }: Props) {
   const { secondary100, secondary40, heading } = theme.colors;
 
+  const navigation = useNavigation();
+
   return (
     <LinearGradient
       style={styles.container}
       colors={[secondary100, secondary40]}
     >
-      <BorderlessButton>
+      <BorderlessButton onPress={navigation.goBack}>
         <Feather
           name="arrow-left"
           size={24}
