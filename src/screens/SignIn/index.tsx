@@ -38,5 +38,3 @@ export function SignIn() {
     </Background>
   );
 }
-
-// 1:05:21
