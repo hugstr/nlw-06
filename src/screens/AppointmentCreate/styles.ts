@@ -4,7 +4,7 @@ import { theme } from "../../global/theme";
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   label: {
     fontSize: 18,
@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   },
   form: {
     paddingHorizontal: 24,
-    marginTop: 32
+    marginTop: 32,
   },
   select: {
     width: "100%",
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: "center",
     paddingRight: 25,
-    overflow: "hidden"
+    overflow: "hidden",
   },
   selectBody: {
     flex: 1,
@@ -33,15 +33,16 @@ export const styles = StyleSheet.create({
   image: {
     width: 64,
     height: 68,
-    backgroundColor: theme.colors.secondary50,
+    backgroundColor: theme.colors.secondary40,
+    borderColor: theme.colors.secondary50,
     borderWidth: 1,
-    borderRadius: 8
+    borderRadius: 8,
   },
   field: {
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 30
+    marginTop: 30,
   },
   column: {
     flexDirection: "row",
@@ -51,15 +52,15 @@ export const styles = StyleSheet.create({
     marginRight: 4,
     fontSize: 15,
     fontFamily: theme.fonts.text500,
-    color: theme.colors.highlight
+    color: theme.colors.highlight,
   },
   characterLimit: {
     fontFamily: theme.fonts.text400,
     fontSize: 13,
-    color: theme.colors.highlight
+    color: theme.colors.highlight,
   },
   footer: {
     marginVertical: 20,
-    marginBottom: 56
-  }
+    marginBottom: 56,
+  },
 });
