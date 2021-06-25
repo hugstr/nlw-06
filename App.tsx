@@ -8,9 +8,11 @@ import {
 } from "@expo-google-fonts/rajdhani";
 import AppLoading from "expo-app-loading";
 
+import { AuthProvider } from "./src/hooks/auth";
+
 import { Routes } from "./src/routes";
 import { Background } from "./src/components/Background";
-import { AuthContext } from "./src/context/auth";
+import { AuthContext } from "./src/hooks/auth";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -31,13 +33,9 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      <AuthContext.Provider value={{
-        name: "Hugo",
-        email: "strh93@gmail.com",
-        avatar: "hugo.png"
-      }}>
+      <AuthProvider>
         <Routes />
-      </AuthContext.Provider>
+      </AuthProvider>
     </Background>
   );
 }
