@@ -1,13 +1,11 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 import * as AuthSession from "expo-auth-session";
 
-import {
-  SCOPE,
-  CDN_IMAGE,
-  CLIENT_ID,
-  REDIRECT_URI,
-  RESPONSE_TYPE,
-} from "../configs";
+const  {SCOPE} = process.env;
+const  {CDN_IMAGE} = process.env;
+const  {CLIENT_ID} = process.env;
+const  {REDIRECT_URI} = process.env;
+const  {RESPONSE_TYPE} = process.env;
 
 import { api } from "../services/api";
 
@@ -32,7 +30,8 @@ type AuthProviderProps = {
 
 type AuthorizationResponse = AuthSession.AuthSessionResult & {
   params: {
-    access_token: string;
+    access_token?: string;
+    error?: string;
   };
 };
 
@@ -52,7 +51,7 @@ function AuthProvider({ children }: AuthProviderProps) {
         authUrl,
       })) as AuthorizationResponse;
 
-      if (type === "success") {
+      if (type === "success" && !params.error) {
         api.defaults.headers.authorization = `Bearer ${params.access_token}`;
 
         const userInfo = await api.get("/users/@me");
@@ -60,10 +59,11 @@ function AuthProvider({ children }: AuthProviderProps) {
         const firstName = userInfo.data.user.split(" ")[0];
         userInfo.data.avatar = `${CDN_IMAGE}/avatars/${userInfo.data.id}/${userInfo.data.avatar}.png`;
         setUser({ ...userInfo.data, firstName, token: params.access_token });
-        setLoading(false);
       }
     } catch {
       throw new Error("Não foi possível autenticar");
+    } finally {
+      setLoading(false);
     }
   }
 
