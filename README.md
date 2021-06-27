@@ -75,8 +75,8 @@ CDN_IMAGE=
 Extra mile:
 <div align="center">
 <img alt="grongos" src="grongos.png" />
-Diferentes campeões aparecem na tela de sign-in de forma aleatória.
-Modal de sign out (meio mal feita mas tá lá).
+  <p>Diferentes campeões aparecem na tela de sign-in de forma aleatória.</p>
+  <p>Modal de sign out (meio mal feita mas tá lá).</p>
 </div>
 
 
