@@ -2,14 +2,17 @@ import React, { useContext } from "react";
 import { Text, View, Image, Alert, ActivityIndicator } from "react-native";
 import * as AuthSession from "expo-auth-session";
 
+import { illustrations } from "../../utils/illustrations";
 import { AuthContext, useAuth } from "../../hooks/auth";
 
-import IllustrationImg from "../../assets/illustration.png";
 import { styles } from "./styles";
 
 import { ButtonIcon } from "../../components/ButtonIcon";
 import { Background } from "../../components/Background";
 import { theme } from "../../global/theme";
+
+const illustrationIndex = Math.floor(Math.random() * 5);
+import IllustrationImg from "../../assets/illustrations/illustration.png";
 
 export function SignIn() {
   const { loading, signIn } = useAuth();
@@ -26,7 +29,7 @@ export function SignIn() {
     <Background>
       <View style={styles.container}>
         <Image
-          source={IllustrationImg}
+          source={illustrations[illustrationIndex]}
           style={styles.image}
           resizeMode="stretch"
         />
