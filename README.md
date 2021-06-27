@@ -11,7 +11,6 @@
 
 ![cover](https://github.com/rodrigorgtic/gameplay-nlw-together/blob/master/.github/cover.png?raw=true)
 
-![grongos](grongos.png)
 ## 💻 Projeto
 Aplicativo para lhe ajudar a conectar-se e organiza o momento de diversão e jogar com os amigos. Crie grupos para jogar seus games favoritos com seus amigos com esse App que possui autenticação com Discord.
 
@@ -72,6 +71,13 @@ RESPONSE_TYPE=
 CLIENT_ID=
 CDN_IMAGE=
 ```
+
+Extra mile:
+<div align="center">
+![grongos](grongos.png)
+Diferentes campeões aparecem na tela de sign-in de forma aleatória.
+Modal de sign out (meio mal feita mas tá lá).
+</div>
 
 
 ## 📄 Licença
